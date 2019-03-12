@@ -1,0 +1,77 @@
+html {
+    width: 100%;
+    height: 100%;
+    background-image: url("laminate.jpg");
+    background-repeat: repeat;
+}
+body {
+    font-family: Exo;
+}
+#calculator {
+    width: 320px;
+    height: 450px;
+    background-color: silver;
+    margin: 0 auto;
+
+    border-radius: 16px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 8px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.38), 0 6px 6px rgba(0,0,0,0.46);
+
+}
+h3 {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    color: #404040;
+    font-family: 'ZCOOL QingKe HuangYou';
+    font-size: 28px;
+    font-style: black;
+    font-weight: 800px;
+    text-align: center;
+}
+#display {
+    border: 4px solid;
+    border-color: steelblue;
+    border-style: inset;
+    font-family: VT323;
+    font-size: 56px;
+    color: #80ff80;
+    background-color: #000000;
+    text-align: right;
+}
+button {
+    border: 1px solid;
+    border-color: #000000;
+    border-style: ridge;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-family: Exo;
+    font-size: 24px;
+    width: 64px;
+    height: 48px;
+    color: #ffffff;
+    background-color: #404040;
+    border-radius: 8px;
+}
+.clearbutton {
+    border: 1px solid;
+    border-color: #000000;
+    border-style: ridge;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-family: Exo;
+    font-size: 24px;
+    width: 64px;
+    height: 48px;
+    background-color: #c00000;
+    border-radius: 8px;
+}
