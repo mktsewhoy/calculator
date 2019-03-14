@@ -1,31 +1,14 @@
 //Define blank variables.
 var tempDispl = '';
 var total = 0;
-//var enteredDigits = [];
 var toCalculate = [];
 
 //Add inputted numbers when number buttons pressed...
 function addClick(n) {
-    //tempDispl = '';
-    //Check whether number or operator pressed.
-    //if (n != '+' && n !='-' && n != '/' && n != '*') {
-        //enteredDigits.push(n);
-    //...then convert the array into a compatible format...
-    //for (var c = 0; c < enteredDigits.length; c++) {
-        //If decimal button pressed and duplicate decimal point found, skip.
-        /*if (n == '.' && enteredDigits[c] == '.') {
-            tempDispl += '';
-        } else if (n == '.' && enteredDigits[c] != '.') {
-            tempDispl += '.';
-        } else {*/
-        //tempDispl += enteredDigits[c];
-        tempDispl += n;
-        //}
-    //}
-    //... and display it in the window.
+    if (tempDispl.length < 12) {
+    tempDispl += n;
+    } else {tempDispl += '';}
     display(tempDispl);
-    //} //else if (temp.length >= 12) {
-        //entered.push();
 }
 
 // When AC button pressed, clear everything.
@@ -33,7 +16,6 @@ function allClear() {
     //Clear all variables...
     tempDispl = '';
     total = 0;
-    //enteredDigits = [];
     toCalculate = [];
     //...and zero the display window.
     display(0);
@@ -58,20 +40,15 @@ function display(d) {
 }*/
 //When operator button pressed, store the current displayed number ('tempDispl') in 'toCalculate'.
 function addOperator (op){
-    //var toCalculate = '';
     //Copy the contents of 'temp' into 'toCalculate'.   
     toCalculate.push(tempDispl);
-    if (op == ('+')) {
-        //toCalculate == tempDispl + '+';    
+    if (op == ('+')) { 
         toCalculate.push('+');
     } else if (op == ('-')) {
-        //toCalculate == tempDispl + '-';
         toCalculate.push('-');
     } else if (op == ('/')) {
-        //toCalculate == tempDispl + '/';
         toCalculate.push('/');
     } else if (op == ('*')) {
-        //toCalculate == tempDispl + '*';
         toCalculate.push('*');
     }
     //Display the operator for user convenience.
@@ -79,9 +56,6 @@ function addOperator (op){
 
     //Reset 'tempDispl' to make way for the next number to be processed.
     tempDispl = '';
-
-   //If the last button press was a sign, change it.
-   //Reset the one decimal point rule.
 }
 
 
@@ -89,12 +63,16 @@ function addOperator (op){
 function doCalc() {
     total = '';
     toCalculate.push(tempDispl);
-    /*for (var c = 0; c < entered.length; c++) { 
-        total += enteredDigits[c];
-    }*/
     total = eval(toCalculate.join(''));
 
+    //If result is bigger than 12 digits, use exponential notation.
+    if (total > 999999999999) {
+        display(total.toExponential(10));
+    } else {
     //...then calculate and display it.
     display(total);
+    }
+    //tempDispl = '';
+    //toCalculate = [];
 }
 
