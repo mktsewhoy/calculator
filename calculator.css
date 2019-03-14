@@ -3,6 +3,7 @@ html {
     height: 100%;
     background-image: url("laminate.jpg");
     background-repeat: repeat;
+    z-index: 1;
 }
 body {
     font-family: Exo;
@@ -22,7 +23,7 @@ body {
     padding: 8px;
 
     box-shadow: 0 10px 20px rgba(0,0,0,0.38), 0 6px 6px rgba(0,0,0,0.46);
-
+    z-index: 2;
 }
 h3 {
     margin-top: 16px;
@@ -33,6 +34,7 @@ h3 {
     font-style: black;
     font-weight: 800px;
     text-align: center;
+    z-index: 3;
 }
 #display {
     border: 4px solid;
@@ -43,6 +45,7 @@ h3 {
     color: #80ff80;
     background-color: #000000;
     text-align: right;
+    z-index: -1;
 }
 button {
     border: 1px solid;
@@ -59,6 +62,7 @@ button {
     color: #ffffff;
     background-color: #404040;
     border-radius: 8px;
+    z-index: 3;
 }
 .clearbutton {
     border: 1px solid;
@@ -74,4 +78,5 @@ button {
     height: 48px;
     background-color: #c00000;
     border-radius: 8px;
+    z-index: 3;
 }
