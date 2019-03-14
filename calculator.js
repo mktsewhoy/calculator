@@ -72,7 +72,7 @@ function doCalc() {
     //...then calculate and display it.
     display(total);
     }
-    //tempDispl = '';
+    tempDispl = '';
     //toCalculate = [];
 }
 
