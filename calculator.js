@@ -1,27 +1,27 @@
 //Define blank variables.
 var tempDispl = '';
 var total = 0;
-var enteredDigits = [];
-var toCalculate = 0;
+//var enteredDigits = [];
+var toCalculate = [];
 
 //Add inputted numbers when number buttons pressed...
 function addClick(n) {
-    tempDispl = '';
+    //tempDispl = '';
     //Check whether number or operator pressed.
     //if (n != '+' && n !='-' && n != '/' && n != '*') {
-        enteredDigits.push(n);
-    
+        //enteredDigits.push(n);
     //...then convert the array into a compatible format...
-    for (var c = 0; c < enteredDigits.length; c++) {
+    //for (var c = 0; c < enteredDigits.length; c++) {
         //If decimal button pressed and duplicate decimal point found, skip.
         /*if (n == '.' && enteredDigits[c] == '.') {
             tempDispl += '';
         } else if (n == '.' && enteredDigits[c] != '.') {
             tempDispl += '.';
         } else {*/
-        tempDispl += enteredDigits[c];
+        //tempDispl += enteredDigits[c];
+        tempDispl += n;
         //}
-    }
+    //}
     //... and display it in the window.
     display(tempDispl);
     //} //else if (temp.length >= 12) {
@@ -33,7 +33,8 @@ function allClear() {
     //Clear all variables...
     tempDispl = '';
     total = 0;
-    enteredDigits = [];
+    //enteredDigits = [];
+    toCalculate = [];
     //...and zero the display window.
     display(0);
 }
@@ -55,18 +56,23 @@ function display(d) {
         enteredDigits.push('.');
         }
 }*/
-//When operator button pressed, store the current displayed number ('temp') in 'toCalculate'.
+//When operator button pressed, store the current displayed number ('tempDispl') in 'toCalculate'.
 function addOperator (op){
     //var toCalculate = '';
     //Copy the contents of 'temp' into 'toCalculate'.   
+    toCalculate.push(tempDispl);
     if (op == ('+')) {
-        toCalculate == tempDispl + '+';    
+        //toCalculate == tempDispl + '+';    
+        toCalculate.push('+');
     } else if (op == ('-')) {
-        toCalculate == tempDispl + '-';
+        //toCalculate == tempDispl + '-';
+        toCalculate.push('-');
     } else if (op == ('/')) {
-        toCalculate == tempDispl + '/';
+        //toCalculate == tempDispl + '/';
+        toCalculate.push('/');
     } else if (op == ('*')) {
-        toCalculate == tempDispl + '*';
+        //toCalculate == tempDispl + '*';
+        toCalculate.push('*');
     }
     //Display the operator for user convenience.
     display(op);
@@ -82,9 +88,11 @@ function addOperator (op){
 //Convert to number when Equal button pressed...
 function doCalc() {
     total = '';
-    for (var c = 0; c < entered.length; c++) { 
+    toCalculate.push(tempDispl);
+    /*for (var c = 0; c < entered.length; c++) { 
         total += enteredDigits[c];
-    }
+    }*/
+    total = eval(toCalculate.join(''));
 
     //...then calculate and display it.
     display(total);
